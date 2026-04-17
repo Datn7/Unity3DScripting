@@ -19,6 +19,7 @@ public class ObjectComponents : MonoBehaviour
         health = GetComponent<PlayerHealth>();
 
         
+
         health.lives = 9;
     }
 
