@@ -2,11 +2,18 @@ using UnityEngine;
 
 public class PlayerMovementBasic : MonoBehaviour
 {
-    Rigidbody rb;
+    
     public float speed = 1f;
     public float jumpForce = 1f;
+    public float bulletSpeed = 1f;
+    public GameObject bullet;
+    public Transform bulletPosition;
+
+
+    Rigidbody rb;
     float inputX, inputY;
     bool jump=false;
+    bool shoot = false;
 
     private void Awake()
     {
@@ -29,6 +36,11 @@ public class PlayerMovementBasic : MonoBehaviour
         {
             jump = true;
         }
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            shoot = true;
+        }
     }
 
     private void FixedUpdate()
@@ -42,10 +54,23 @@ public class PlayerMovementBasic : MonoBehaviour
             Jump();
             jump = false;
         }
+
+        if (shoot == true)
+        { 
+            Shoot();
+            shoot = false;
+        }
     }
 
     void Jump()
     {
         rb.AddForce(0, jumpForce, 0);
+    }
+
+    void Shoot()
+    {
+        GameObject bulletSpawn = Instantiate(bullet, bulletPosition.position, bullet.transform.rotation);
+
+        bulletSpawn.GetComponent<Rigidbody>().linearVelocity = new Vector3(0, 0, bulletSpeed);
     }
 }
