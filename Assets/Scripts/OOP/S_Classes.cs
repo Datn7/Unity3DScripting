@@ -1,5 +1,8 @@
+using System;
 using UnityEngine;
 
+
+[Serializable]
 public class Classes
 {
     public float speed = 5f;
