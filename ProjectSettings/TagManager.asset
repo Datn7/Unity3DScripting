@@ -6,6 +6,7 @@ TagManager:
   tags:
   - cubeTag
   - Enemy
+  - CoinTag
   layers:
   - Default
   - TransparentFX

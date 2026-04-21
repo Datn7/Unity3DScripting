@@ -4,11 +4,14 @@ using UnityEngine.SceneManagement;
 public class C_PlayerController : MonoBehaviour
 {
     public float speed = 5f;
+    public int WinScore = 3;
+    public GameObject WinText;
 
     Rigidbody rb;
 
     float xInput;
     float yInput;
+    int score = 0;
 
 
     private void Awake()
@@ -31,4 +34,21 @@ public class C_PlayerController : MonoBehaviour
 
         rb.AddForce(xInput, 0, yInput * speed);
     }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+            if(other.CompareTag("CoinTag"))
+        {
+            other.gameObject.SetActive(false);
+
+            score++;
+
+            if(score >= WinScore)
+            {
+                WinText.SetActive(true);
+            }
+        }
+    }
+
 }
