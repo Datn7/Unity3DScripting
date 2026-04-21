@@ -3,9 +3,25 @@ using UnityEngine;
 public class Classes
 {
     public float speed = 5f;
-    string color = "red";
-    int highSpeed = 300;
+    public string color = "red";
+    public int highSpeed = 300;
 
+
+    public Classes()
+    {
+        
+    }
+
+    public Classes(float speeda)
+    {
+        this.speed = speeda;
+    }
+
+    public Classes(float speed, string color)
+    {
+        this.speed = speed;
+        this.color = color;
+    }
 
     public void Move()
     {
