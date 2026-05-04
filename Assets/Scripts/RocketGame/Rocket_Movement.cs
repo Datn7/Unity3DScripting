@@ -9,11 +9,13 @@ public class Rocket_Movement : MonoBehaviour
     [SerializeField] float thrustForce = 100f;
 
     Rigidbody rb;
+    AudioSource audioSource;
 
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
     }
 
 
@@ -39,7 +41,9 @@ public class Rocket_Movement : MonoBehaviour
         {
 
             rb.AddRelativeTorque(Vector3.forward * rotationInput * 111 * Time.deltaTime);
+            
         }
+
     }
 
     private void ProcessThrust()
@@ -47,6 +51,14 @@ public class Rocket_Movement : MonoBehaviour
         if (thrust.IsPressed())
         {
             rb.AddRelativeForce(Vector3.up * thrustForce * Time.deltaTime);
+            if(!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
+            else  
+            {
+                audioSource.Stop();
+            }
         }
     }
 }
