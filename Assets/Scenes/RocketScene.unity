@@ -191,6 +191,7 @@ MonoBehaviour:
       m_Action: Thrust
       m_Flags: 0
     m_Flags: 0
+  thrustForce: 1000
 --- !u!65 &38853914
 BoxCollider:
   m_ObjectHideFlags: 0

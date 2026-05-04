@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class Rocket_Movement : MonoBehaviour
 {
     [SerializeField] InputAction thrust;
+    [SerializeField] float thrustForce = 100f;
 
     Rigidbody rb;
 
@@ -24,7 +25,7 @@ public class Rocket_Movement : MonoBehaviour
     {
         if(thrust.IsPressed())
         {
-            rb.AddRelativeForce(Vector3.up * 100f);
+            rb.AddRelativeForce(Vector3.up * thrustForce * Time.deltaTime);
         }
     }
 }
