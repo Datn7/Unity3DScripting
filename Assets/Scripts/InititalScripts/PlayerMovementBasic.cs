@@ -73,4 +73,9 @@ public class PlayerMovementBasic : MonoBehaviour
 
         bulletSpawn.GetComponent<Rigidbody>().linearVelocity = new Vector3(0, 0, bulletSpeed);
     }
+
+    private void OnDestroy()
+    {
+        Destroy(rb);
+    }
 }
