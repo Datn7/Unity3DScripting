@@ -37,7 +37,8 @@ public class Rocket_Movement : MonoBehaviour
 
         if(rotationInput != 0)
         {
-            rb.AddRelativeTorque(Vector3.forward * rotationInput * thrustForce * Time.deltaTime);
+
+            rb.AddRelativeTorque(Vector3.forward * rotationInput * 111 * Time.deltaTime);
         }
     }
 
