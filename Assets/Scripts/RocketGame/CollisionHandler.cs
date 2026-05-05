@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
@@ -16,8 +17,14 @@ public class CollisionHandler : MonoBehaviour
                 Debug.Log("20 larisa gaamse!");
                 break;
             default:
-                Debug.Log("You lose bitch!");
+                //reload level in 2 seconds, thats what invoke method does, it calls the method after the time specified
+                Invoke("ReloadLevel", 2f);
                 break;
         }
     }
-}
+
+        public void ReloadLevel(){
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+    }
+
