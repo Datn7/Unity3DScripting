@@ -35,7 +35,6 @@ public class Rocket_Movement : MonoBehaviour
     private void ProcessRotation()
     {
         float rotationInput = rotation.ReadValue<float>();
-        Debug.Log("here is our rotation value: " + rotationInput);
 
         if(rotationInput != 0)
         {
@@ -55,10 +54,7 @@ public class Rocket_Movement : MonoBehaviour
             {
                 audioSource.Play();
             }
-            else  
-            {
-                audioSource.Stop();
-            }
+            
         }
     }
 }
