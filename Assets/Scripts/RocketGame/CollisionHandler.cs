@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
+    public float levelLoadDelay = 2f;
+
     private void OnCollisionEnter(Collision collision)
     {
         switch (collision.gameObject.tag)
@@ -11,20 +13,32 @@ public class CollisionHandler : MonoBehaviour
                 Debug.Log("This thing is friendly");
                 break;
             case "Finish":
-                Debug.Log("You win!");
+                StartSuccessSequence();
                 break;
             case "Fuel":
                 Debug.Log("20 larisa gaamse!");
                 break;
             default:
                 //reload level in 2 seconds, thats what invoke method does, it calls the method after the time specified
-                Invoke("ReloadLevel", 2f);
+                StartCrashSequence();
                 break;
         }
     }
 
         public void ReloadLevel(){
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+
+    public void StartSuccessSequence()
+    {
+        GetComponent<Rocket_Movement>().enabled = false;
+         Invoke("ReloadLevel", levelLoadDelay);
     }
+
+    public void StartCrashSequence()
+    {
+        GetComponent<Rocket_Movement>().enabled = false;
+        Invoke("ReloadLevel", levelLoadDelay);
+    }
+}
 
