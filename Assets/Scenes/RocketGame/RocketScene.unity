@@ -140,7 +140,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 6c19221e97eba2f4e8230c2a25f31b71, type: 3}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.2
   m_Pitch: 1
@@ -238,6 +238,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc2a82ddf216d5047bc3d0d08b2bd19f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionHandler
+  levelLoadDelay: 2
+  success: {fileID: 8300000, guid: 6caf6e6b209005348b295934916fd1ee, type: 3}
+  crash: {fileID: 8300000, guid: 51e131b47330d1547aecef232c17302a, type: 3}
 --- !u!1001 &65450646
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3348,6 +3351,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Rocket
       objectReference: {fileID: 0}
+    - target: {fileID: 6432480593352228424, guid: 733d04aa26d1ed140be48c8d71d18657, type: 3}
+      propertyPath: mainEngine
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c19221e97eba2f4e8230c2a25f31b71, type: 3}
     - target: {fileID: 6432480593352228424, guid: 733d04aa26d1ed140be48c8d71d18657, type: 3}
       propertyPath: rotationForce
       value: 1

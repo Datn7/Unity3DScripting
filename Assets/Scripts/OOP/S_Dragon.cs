@@ -28,7 +28,7 @@ public class S_Dragon : S_Enemy
         }
     }
 
-    public virtual void Attack()
+    public new virtual void Attack()
     {
         print("Enemy attacks for " + damage + " damage!");
     }

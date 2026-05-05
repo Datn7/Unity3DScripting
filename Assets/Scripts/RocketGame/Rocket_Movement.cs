@@ -7,9 +7,12 @@ public class Rocket_Movement : MonoBehaviour
     [SerializeField] InputAction thrust;
     [SerializeField] InputAction rotation;
     [SerializeField] float thrustForce = 100f;
+    [SerializeField] AudioClip mainEngine;
 
     Rigidbody rb;
     AudioSource audioSource;
+
+    bool isAlive;
 
 
     private void Start()
@@ -52,7 +55,7 @@ public class Rocket_Movement : MonoBehaviour
             rb.AddRelativeForce(Vector3.up * thrustForce * Time.deltaTime);
             if(!audioSource.isPlaying)
             {
-                audioSource.Play();
+                audioSource.PlayOneShot(mainEngine);
             }
             
         }

@@ -4,6 +4,16 @@ using UnityEngine.SceneManagement;
 public class CollisionHandler : MonoBehaviour
 {
     public float levelLoadDelay = 2f;
+    [SerializeField] AudioClip success;
+    [SerializeField] AudioClip crash;
+
+    AudioSource audioSource;
+    
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -31,12 +41,15 @@ public class CollisionHandler : MonoBehaviour
 
     public void StartSuccessSequence()
     {
+        audioSource.PlayOneShot(success);
         GetComponent<Rocket_Movement>().enabled = false;
-         Invoke("ReloadLevel", levelLoadDelay);
+        GetComponent<Rigidbody>().isKinematic = true;
+        Invoke("ReloadLevel", levelLoadDelay);
     }
 
     public void StartCrashSequence()
     {
+        audioSource.PlayOneShot(crash);
         GetComponent<Rocket_Movement>().enabled = false;
         Invoke("ReloadLevel", levelLoadDelay);
     }
