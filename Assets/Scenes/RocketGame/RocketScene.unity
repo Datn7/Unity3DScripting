@@ -241,6 +241,8 @@ MonoBehaviour:
   levelLoadDelay: 2
   success: {fileID: 8300000, guid: 6caf6e6b209005348b295934916fd1ee, type: 3}
   crash: {fileID: 8300000, guid: 51e131b47330d1547aecef232c17302a, type: 3}
+  successParticles: {fileID: 6880012945357489063}
+  crashParticles: {fileID: 6880012945357489062}
 --- !u!1001 &65450646
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -313,6 +315,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a41951dc5dfb26c4d9f2e74b27bb583c, type: 3}
   m_PrefabInstance: {fileID: 65450646}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &78944709 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6574716819070296323, guid: 733d04aa26d1ed140be48c8d71d18657, type: 3}
+  m_PrefabInstance: {fileID: 6880012945357489061}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &102628456 stripped
 GameObject:
@@ -1721,6 +1728,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Cinemachine::Cinemachine.CinemachinePipeline
+--- !u!198 &1039075527 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2308536008581833663, guid: 733d04aa26d1ed140be48c8d71d18657, type: 3}
+  m_PrefabInstance: {fileID: 6880012945357489061}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1349128271
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3363,6 +3375,18 @@ PrefabInstance:
       propertyPath: rotationForce
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6432480593352228424, guid: 733d04aa26d1ed140be48c8d71d18657, type: 3}
+      propertyPath: leftThrustParticles
+      value: 
+      objectReference: {fileID: 6880012945357489064}
+    - target: {fileID: 6432480593352228424, guid: 733d04aa26d1ed140be48c8d71d18657, type: 3}
+      propertyPath: mainEngineParticles
+      value: 
+      objectReference: {fileID: 78944709}
+    - target: {fileID: 6432480593352228424, guid: 733d04aa26d1ed140be48c8d71d18657, type: 3}
+      propertyPath: rightThrustParticles
+      value: 
+      objectReference: {fileID: 1039075527}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3374,6 +3398,21 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 38853920}
   m_SourcePrefab: {fileID: 100100000, guid: 733d04aa26d1ed140be48c8d71d18657, type: 3}
+--- !u!198 &6880012945357489062 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1425695910115707573, guid: 733d04aa26d1ed140be48c8d71d18657, type: 3}
+  m_PrefabInstance: {fileID: 6880012945357489061}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &6880012945357489063 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3680136704613288179, guid: 733d04aa26d1ed140be48c8d71d18657, type: 3}
+  m_PrefabInstance: {fileID: 6880012945357489061}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &6880012945357489064 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2765142779234765398, guid: 733d04aa26d1ed140be48c8d71d18657, type: 3}
+  m_PrefabInstance: {fileID: 6880012945357489061}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3386,5 +3425,5 @@ SceneRoots:
   - {fileID: 2079521648}
   - {fileID: 1619745277}
   - {fileID: 949360957}
-  - {fileID: 6880012945357489061}
   - {fileID: 3844587503058038345}
+  - {fileID: 6880012945357489061}

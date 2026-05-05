@@ -8,6 +8,9 @@ public class Rocket_Movement : MonoBehaviour
     [SerializeField] InputAction rotation;
     [SerializeField] float thrustForce = 100f;
     [SerializeField] AudioClip mainEngine;
+    [SerializeField] ParticleSystem mainEngineParticles;
+    [SerializeField] ParticleSystem rightThrustParticles;
+    [SerializeField] ParticleSystem leftThrustParticles;
 
     Rigidbody rb;
     AudioSource audioSource;
@@ -57,6 +60,16 @@ public class Rocket_Movement : MonoBehaviour
             {
                 audioSource.PlayOneShot(mainEngine);
             }
+
+            if (!mainEngineParticles.isPlaying)
+            {
+                mainEngineParticles.Play();
+            }
+        }
+        else
+        {
+            audioSource.Stop();
+            mainEngineParticles.Stop();
             
         }
     }
