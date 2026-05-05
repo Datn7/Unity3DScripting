@@ -8,7 +8,9 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] AudioClip crash;
 
     AudioSource audioSource;
-    
+
+    bool isControllable = true;
+
 
     private void Start()
     {
@@ -17,6 +19,8 @@ public class CollisionHandler : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (!isControllable) { return; }
+
         switch (collision.gameObject.tag)
         {
             case "Friendly":
@@ -41,6 +45,8 @@ public class CollisionHandler : MonoBehaviour
 
     public void StartSuccessSequence()
     {
+        isControllable = false;
+        audioSource.Stop();
         audioSource.PlayOneShot(success);
         GetComponent<Rocket_Movement>().enabled = false;
         GetComponent<Rigidbody>().isKinematic = true;
@@ -49,6 +55,8 @@ public class CollisionHandler : MonoBehaviour
 
     public void StartCrashSequence()
     {
+        isControllable = false;
+        audioSource.Stop();
         audioSource.PlayOneShot(crash);
         GetComponent<Rocket_Movement>().enabled = false;
         Invoke("ReloadLevel", levelLoadDelay);
